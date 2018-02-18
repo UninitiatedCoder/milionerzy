@@ -1,0 +1,50 @@
+// Structures and array of structures
+// @WS, ver 0.1 
+// 01/29/2018, Koszalin
+
+
+#include <iostream>
+#include <cstring>
+ 
+using namespace std;
+
+struct Book {
+   char  title[50];
+   char  authors[20];
+   char  publishingHouse[20];
+   int   book_id;
+};
+ 
+int main() {
+   struct Book Book1;       // Declare Book1 of type Book
+   struct Book Book2;       // Declare Book2 of type Book
+   Book Books[10];         // Declare the array of structures
+ 
+
+   strcpy( Book1.title, "THINKING IN C++");
+   strcpy( Book1.authors, "Kernighan Brian W., Ritchie Dennis M."); 
+   strcpy( Book1.publishingHouse, "Helion");
+   Book1.book_id = 1;
+
+   strcpy( Book2.title, "JEZYK ANSI C. PROGRAMOWANIE");
+   strcpy( Book2.authors, "Yakit Singha");
+   strcpy( Book2.publishingHouse, "Helion");
+   Book2.book_id = 2;
+   
+   
+   
+   Books[0] = Book1;
+   Books[1] = Book2;
+  
+   int i;//numer id ksiazki - jezeli 0, otwiera ksiazke numer 1 itd.
+    cout << "What is the number id of your book?" <<endl;
+    
+    cin>>i;
+    
+    cout << "Book title: " << Books[i].title <<endl;
+    cout << "Book authors: " << Books[i].authors <<endl;
+    cout << "Book publishing house: " << Books[i].publishingHouse <<endl;
+    cout << "Book id: " << Books[i].book_id <<endl <<endl;   
+    
+   return 0;
+}
